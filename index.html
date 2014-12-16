@@ -1,5 +1,6 @@
 <html>
 <head>
+	<script src="jquery-1.11.1.js"></script>
   <script src="vendor/keymaster.js"></script>
   <script src='lib/utils.js'></script>
   <script src='lib/movingObject.js'></script>
@@ -8,9 +9,12 @@
   <script src='lib/game.js'></script>
   <script src='lib/gameView.js'></script>
   <script src='lib/ship.js'></script>
+	<link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body>
   <canvas id="game-canvas" width="900" height="507" style="background-image: url(lib/space.jpg)"></canvas>
+	<div id="lives">Number of Lives: <div id="number-of-lives">3</div></div>
+	<div id="points">Points: <div id="number-of-points">0</div></div>
   <script>
   	var canvas = document.getElementById("game-canvas");
   	var gameView = new Asteroids.GameView(canvas);

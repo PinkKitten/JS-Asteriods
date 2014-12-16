@@ -1,0 +1,13 @@
+#game-canvas {
+	position: absolute;
+}
+
+#lives {
+	position: relative;
+	color: white;
+}
+
+#points {
+	position: relative;
+	color: white;
+}
