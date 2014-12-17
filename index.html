@@ -22,7 +22,9 @@
 		<div id="visit-leadership-board">Go to leadership board</div>
 	</div>
 	<div id="message" class='hidden'></div>
-	<div id="leadership-board" class='hidden'>Winners</div>
+	<div id="leadership-board" class='hidden'>Winners
+		<div id="best-scores"></div>
+	</div>
 	<div id="game-over" class='hidden'>
 		<div id="final-score"> </div> Points! <br>
 		Please add your name to the wall of fame <br>
@@ -52,6 +54,7 @@
 			$(leaderBoard).removeClass('hidden');
 			$(leaderBoard).addClass('visible');
 			var highScores = new Asteroids.HighScores();
+			highScores.fetchScores();
 		};
 		
 		submitScore.onclick = function () {
