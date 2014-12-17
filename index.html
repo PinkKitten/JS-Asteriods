@@ -23,6 +23,12 @@
 	</div>
 	<div id="message" class='hidden'></div>
 	<div id="leadership-board" class='hidden'>Winners</div>
+	<div id="game-over" class='hidden'>
+		<div id="final-score"> </div> Points! <br>
+		Please add your name to the wall of fame <br>
+		<input type="text" id="username">
+		<button type="submit" id="add-score">Submit</button>
+	</div>
   <script>
 		Parse.initialize("g8blYmmFoAI9p2LJtzuOVEiW7emy1dWsdqt8nEHQ", "rKwd1vdlANyEkdHl1SFiNk5zmZoeIlApjSQOkTQJ");
 	
@@ -30,6 +36,7 @@
 		var startGame = document.getElementById("start-new-game");
   	var visitLeaderBoard = document.getElementById("visit-leadership-board");
 		var leaderBoard = document.getElementById("leadership-board");
+		var submitScore = document.getElementById("add-score");
 		
 		startGame.onclick = function () {
 			var canvas = document.getElementById("game-canvas");
@@ -45,18 +52,14 @@
 			$(leaderBoard).removeClass('hidden');
 			$(leaderBoard).addClass('visible');
 			var highScores = new Asteroids.HighScores();
-				//
-			// jQuery.get('highscores.json', function(data) {
-		// 	    alert(data);
-		// 	});
-			// $.ajax({
-			// url: "highscores.json",
-			// success: function (data) {
-			//   var obj = JSON.parse(data);
-			// 	alert(obj)
-			// }
-			// });
-			//
+		};
+		
+		submitScore.onclick = function () {
+			debugger
+			var points = $('#final-score').html();
+			var username = $('#username').val();
+			var score = new Asteroids.HighScores();
+			score.addScore(username, points);
 		};
 		
   </script>
