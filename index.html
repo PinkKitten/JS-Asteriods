@@ -9,16 +9,56 @@
   <script src='lib/game.js'></script>
   <script src='lib/gameView.js'></script>
   <script src='lib/ship.js'></script>
+	<script src='lib/highscores.js'></script>
+	<script src="parse.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body>
   <canvas id="game-canvas" width="900" height="507" style="background-image: url(lib/space.jpg)"></canvas>
 	<div id="lives">Number of Lives: <div id="number-of-lives">3</div></div>
 	<div id="points">Points: <div id="number-of-points">0</div></div>
+	<div id='welcome' class='visible'>
+		<div id="start-new-game">Start a new game!</div>
+		<div id="visit-leadership-board">Go to leadership board</div>
+	</div>
+	<div id="message" class='hidden'></div>
+	<div id="leadership-board" class='hidden'>Winners</div>
   <script>
-  	var canvas = document.getElementById("game-canvas");
-  	var gameView = new Asteroids.GameView(canvas);
-  	gameView.start(); 
+		Parse.initialize("g8blYmmFoAI9p2LJtzuOVEiW7emy1dWsdqt8nEHQ", "rKwd1vdlANyEkdHl1SFiNk5zmZoeIlApjSQOkTQJ");
+	
+		var welcome = document.getElementById('welcome');
+		var startGame = document.getElementById("start-new-game");
+  	var visitLeaderBoard = document.getElementById("visit-leadership-board");
+		var leaderBoard = document.getElementById("leadership-board");
+		
+		startGame.onclick = function () {
+			var canvas = document.getElementById("game-canvas");
+	  	var gameView = new Asteroids.GameView(canvas);
+			gameView.start();
+			$(welcome).removeClass('visible');
+			$(welcome).addClass('hidden');
+  	};
+		
+		visitLeaderBoard.onclick = function () {
+			$(welcome).removeClass('visible');
+			$(welcome).addClass('hidden');
+			$(leaderBoard).removeClass('hidden');
+			$(leaderBoard).addClass('visible');
+			var highScores = new Asteroids.HighScores();
+				//
+			// jQuery.get('highscores.json', function(data) {
+		// 	    alert(data);
+		// 	});
+			// $.ajax({
+			// url: "highscores.json",
+			// success: function (data) {
+			//   var obj = JSON.parse(data);
+			// 	alert(obj)
+			// }
+			// });
+			//
+		};
+		
   </script>
 </body>
 </html>
