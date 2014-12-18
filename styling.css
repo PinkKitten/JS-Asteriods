@@ -12,6 +12,16 @@
 	color: white;
 }
 
+#pause-music {
+	position: relative;
+	color: white;
+}
+
+#play-music {
+	position: relative;
+	color: white;
+}
+
 #welcome {
 	position: relative;
 	color: white;
@@ -20,26 +30,67 @@
 	height: 200px;
 	margin-left: 250px;
 	margin-top: 100px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+}
+
+#cat-gif {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+
+#cat-gif img {
+	height: 100px;
+}
+
+#start-new-game, #visit-leadership-board {
+	font-size: 32px;
+	margin: 10px;
+}
+
+#start-new-game:hover, #visit-leadership-board:hover {
+	color: grey;
+}
+
+#background-music {
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 
 #leadership-board {
 	position: relative;
 	color: white;
-	background-color: red;
+	background-color: pink;
 	width: 400px;
 	height: 200px;
 	margin-left: 250px;
 	margin-top: 100px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+	text-align: center;
+}
+
+#best-scores {
+	position: relative;t
 }
 
 #game-over {
 	position: relative;
 	color: white;
-	background-color: red;
+	background-color: pink;
 	width: 400px;
 	height: 200px;
 	margin-left: 250px;
 	margin-top: 100px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+	text-align: center;
+}
+
+#final-score {
+	display: inline-block;
 }
 
 .visible {

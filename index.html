@@ -14,22 +14,31 @@
 	<link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body>
-  <canvas id="game-canvas" width="900" height="507" style="background-image: url(lib/space.jpg)"></canvas>
+  <canvas id="game-canvas" width="900" height="550" style="background-image: url(lib/background1.jpg)"></canvas>
 	<div id="lives">Number of Lives: <div id="number-of-lives">3</div></div>
 	<div id="points">Points: <div id="number-of-points">0</div></div>
+	<div id="pause-music">Pause music</div>
+	<div id="play-music">Play music</div>
 	<div id='welcome' class='visible'>
-		<div id="start-new-game">Start a new game!</div>
-		<div id="visit-leadership-board">Go to leadership board</div>
+		<div id="start-new-game">Start a new game</div>
+		<div id="visit-leadership-board">Go to highscores</div>
+		<div id="cat-gif"><img src="lib/white_cat.gif"></div>
 	</div>
 	<div id="message" class='hidden'></div>
-	<div id="leadership-board" class='hidden'>Winners
+	<div id="leadership-board" class='hidden'>Wall of Fame!
 		<div id="best-scores"></div>
+		<div id="back-to-overview">Back to start</div>
 	</div>
 	<div id="game-over" class='hidden'>
 		<div id="final-score"> </div> Points! <br>
 		Please add your name to the wall of fame <br>
 		<input type="text" id="username">
 		<button type="submit" id="add-score">Submit</button>
+	</div>
+	<div id="background-music">
+		<audio loop="loop" autoplay="autoplay" controls="controls" id="music" hidden="true">  
+		   <source src="lib/music.mp3" />  
+		</audio>
 	</div>
   <script>
 		Parse.initialize("g8blYmmFoAI9p2LJtzuOVEiW7emy1dWsdqt8nEHQ", "rKwd1vdlANyEkdHl1SFiNk5zmZoeIlApjSQOkTQJ");
@@ -39,7 +48,12 @@
   	var visitLeaderBoard = document.getElementById("visit-leadership-board");
 		var leaderBoard = document.getElementById("leadership-board");
 		var submitScore = document.getElementById("add-score");
-		
+		var gameOver = document.getElementById("game-over");
+		var player = document.getElementById("music"); 
+		var pauseMusic = document.getElementById("pause-music"); 
+		var playMusic = document.getElementById("play-music"); 
+		var backToStart = document.getElementById("back-to-overview");
+		 
 		startGame.onclick = function () {
 			var canvas = document.getElementById("game-canvas");
 	  	var gameView = new Asteroids.GameView(canvas);
@@ -47,6 +61,21 @@
 			$(welcome).removeClass('visible');
 			$(welcome).addClass('hidden');
   	};
+		
+		pauseMusic.onclick = function () {
+			player.pause();
+		};
+		
+		playMusic.onclick = function () {
+			player.play();
+		};
+		
+		backToStart.onclick = function () {
+			$(welcome).removeClass('hidden');
+			$(welcome).addClass('visible');
+			$(leaderBoard).removeClass('visible');
+			$(leaderBoard).addClass('hidden');
+		};
 		
 		visitLeaderBoard.onclick = function () {
 			$(welcome).removeClass('visible');
@@ -58,11 +87,15 @@
 		};
 		
 		submitScore.onclick = function () {
-			debugger
 			var points = $('#final-score').html();
 			var username = $('#username').val();
 			var score = new Asteroids.HighScores();
 			score.addScore(username, points);
+			$('#username').html = "";
+			$(gameOver).removeClass('visible');
+			$(gameOver).addClass('hidden');
+			$(leaderBoard).removeClass('hidden');
+			$(leaderBoard).addClass('visible');
 		};
 		
   </script>
