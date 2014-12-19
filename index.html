@@ -32,6 +32,7 @@
 	</div>
 	<div id="instructions" class='hidden'>
 		Instructions to play the game
+		<div id="back-to-overview-from-instructions">Back to start</div>
 	</div>
 	<div id="game-over" class='hidden'>
 		<div id="final-score"> </div> Points! <br>
@@ -57,7 +58,10 @@
 		var pauseMusic = document.getElementById("pause-music"); 
 		var playMusic = document.getElementById("play-music"); 
 		var backToStart = document.getElementById("back-to-overview");
-		 
+		var backToStartFromInstructions = document.getElementById("back-to-overview-from-instructions");
+		var visitInstructions = document.getElementById('visit-instructions');
+		var instructions = document.getElementById('instructions');
+		
 		startGame.onclick = function () {
 			var canvas = document.getElementById("game-canvas");
 	  	var gameView = new Asteroids.GameView(canvas);
@@ -81,6 +85,13 @@
 			$(leaderBoard).addClass('hidden');
 		};
 		
+		backToStartFromInstructions.onclick = function () {
+			$(welcome).removeClass('hidden');
+			$(welcome).addClass('visible');
+			$(instructions).removeClass('visible');
+			$(instructions).addClass('hidden');
+		};
+		
 		visitLeaderBoard.onclick = function () {
 			$(welcome).removeClass('visible');
 			$(welcome).addClass('hidden');
@@ -89,6 +100,13 @@
 			var highScores = new Asteroids.HighScores();
 			highScores.fetchScores();
 		};
+		
+		visitInstructions.onclick = function () {
+			$(welcome).removeClass('visible');
+			$(welcome).addClass('hidden');
+			$(instructions).removeClass('hidden');
+			$(instructions).addClass('visible');
+		}
 		
 		submitScore.onclick = function () {
 			var points = $('#final-score').html();

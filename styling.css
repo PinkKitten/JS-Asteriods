@@ -44,13 +44,14 @@
 	height: 100px;
 }
 
-#start-new-game, #visit-leadership-board {
+#start-new-game, #visit-leadership-board, #visit-instructions {
 	font-size: 32px;
 	margin: 10px;
 }
 
-#start-new-game:hover, #visit-leadership-board:hover {
+#start-new-game:hover, #visit-leadership-board:hover, #visit-instructions:hover {
 	color: grey;
+    cursor: pointer;
 }
 
 #background-music {
@@ -59,7 +60,7 @@
 	left: 0px;
 }
 
-#leadership-board {
+#leadership-board, #instructions {
 	position: relative;
 	color: white;
 	background-color: pink;
