@@ -1,20 +1,20 @@
 <html>
 <head>
-	<script src="jquery-1.11.1.js"></script>
-  <script src="vendor/keymaster.js"></script>
-  <script src='lib/utils.js'></script>
-  <script src='lib/movingObject.js'></script>
-  <script src='lib/asteroid.js'></script>
-  <script src='lib/bullet.js'></script>
-  <script src='lib/game.js'></script>
-  <script src='lib/gameView.js'></script>
-  <script src='lib/ship.js'></script>
-	<script src='lib/highscores.js'></script>
-	<script src="parse.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="styling.css">
+    <script src="jquery-1.11.1.js"></script>
+    <script src="vendor/keymaster.js"></script>
+    <script src='lib/utils.js'></script>
+    <script src='lib/movingObject.js'></script>
+    <script src='lib/asteroid.js'></script>
+    <script src='lib/bullet.js'></script>
+    <script src='lib/game.js'></script>
+    <script src='lib/gameView.js'></script>
+    <script src='lib/ship.js'></script>
+    <script src='lib/highscores.js'></script>
+    <script src="parse.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body>
-  <canvas id="game-canvas" width="900" height="550" style="background-image: url(lib/background1.jpg)"></canvas>
+    <canvas id="game-canvas" width="900" height="550" style="background-image: url(./images/background1.jpg)"></canvas>
 	<div id="lives">Number of Lives: <div id="number-of-lives">3</div></div>
 	<div id="points">Points: <div id="number-of-points">0</div></div>
 	<div id="pause-music">Pause music</div>
@@ -23,17 +23,16 @@
 		<div id="start-new-game">Start a new game</div>
 		<div id="visit-instructions">Read instructions</div>
 		<div id="visit-leadership-board">Go to highscores</div>
-		<div id="cat-gif"><img src="lib/white_cat.gif"></div>
-	</div>
-	<div id="message" class='hidden'></div>
-	<div id="leadership-board" class='hidden'>Wall of Fame!
-		<div id="best-scores"></div>
-		<div id="back-to-overview">Back to start</div>
-	</div>
-	<div id="instructions" class='hidden'>
-		Instructions to play the game
-		<div id="back-to-overview-from-instructions">Back to start</div>
-	</div>
+		<div id="cat-gif"><img src="./images/white_cat.gif"></div>
+    </div>
+    <div id="message" class='hidden'></div>
+    <div id="leadership-board" class='hidden'>Wall of Fame!
+	    <div id="best-scores"></div>
+	    <div id="back-to-overview">Back to start</div>
+    </div>
+    <div id="instructions" class='hidden'>Instructions to play the game
+	    <div id="back-to-overview-from-instructions">Back to start</div>
+    </div>
 	<div id="game-over" class='hidden'>
 		<div id="final-score"> </div> Points! <br>
 		Please add your name to the wall of fame <br>
@@ -42,15 +41,14 @@
 	</div>
 	<div id="background-music">
 		<audio loop="loop" autoplay="autoplay" controls="controls" id="music" hidden="true">  
-		   <source src="lib/music.mp3" />  
+		   <source src="./images/music.mp3" />  
 		</audio>
 	</div>
-  <script>
-		Parse.initialize("g8blYmmFoAI9p2LJtzuOVEiW7emy1dWsdqt8nEHQ", "rKwd1vdlANyEkdHl1SFiNk5zmZoeIlApjSQOkTQJ");
-	
+    <script>
+	    Parse.initialize("g8blYmmFoAI9p2LJtzuOVEiW7emy1dWsdqt8nEHQ", "rKwd1vdlANyEkdHl1SFiNk5zmZoeIlApjSQOkTQJ");
 		var welcome = document.getElementById('welcome');
 		var startGame = document.getElementById("start-new-game");
-  	var visitLeaderBoard = document.getElementById("visit-leadership-board");
+  	    var visitLeaderBoard = document.getElementById("visit-leadership-board");
 		var leaderBoard = document.getElementById("leadership-board");
 		var submitScore = document.getElementById("add-score");
 		var gameOver = document.getElementById("game-over");
@@ -64,11 +62,11 @@
 		
 		startGame.onclick = function () {
 			var canvas = document.getElementById("game-canvas");
-	  	var gameView = new Asteroids.GameView(canvas);
+	  	    var gameView = new Asteroids.GameView(canvas);
 			gameView.start();
 			$(welcome).removeClass('visible');
 			$(welcome).addClass('hidden');
-  	};
+  	    };
 		
 		pauseMusic.onclick = function () {
 			player.pause();
@@ -119,7 +117,6 @@
 			$(leaderBoard).removeClass('hidden');
 			$(leaderBoard).addClass('visible');
 		};
-		
-  </script>
+    </script>
 </body>
 </html>
