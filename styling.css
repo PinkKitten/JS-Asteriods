@@ -4,22 +4,52 @@
 
 #lives {
 	position: relative;
-	color: white;
+	color: grey;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#number-of-lives {
+    display: inline-block;
 }
 
 #points {
 	position: relative;
-	color: white;
+	color: grey;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#number-of-points {
+    display: inline-block;
 }
 
 #pause-music {
 	position: relative;
-	color: white;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+#pause-music img {
+	width: 30px;
+    opacity: 0.5;
 }
 
 #play-music {
 	position: relative;
-	color: white;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+#play-music img {
+	width: 35px;
+    opacity: 0.5;
 }
 
 #welcome {
