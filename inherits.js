@@ -1,13 +1,13 @@
 Function.prototype.inherits = function(ParentClass){
-  var Surrogate = function(){};
-  Surrogate.prototype = ParentClass.prototype;
-  this.prototype = new Surrogate();
+    var Surrogate = function(){};
+    Surrogate.prototype = ParentClass.prototype;
+    this.prototype = new Surrogate();
 }
 
 var MovingObject = function(){};
 
 MovingObject.prototype.move = function(){
-  return true;
+    return true;
 };
 
 var Asteroid = function(){};

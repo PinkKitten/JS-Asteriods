@@ -60,17 +60,79 @@
 	left: 0px;
 }
 
-#leadership-board, #instructions {
+#leadership-board {
 	position: relative;
-	color: white;
+	color: grey;
 	background-color: pink;
 	width: 400px;
-	height: 200px;
+	height: 300px;
 	margin-left: 250px;
-	margin-top: 100px;
+	margin-top: 50px;
 	border-radius: 5px;
 	box-shadow: 10px 10px 5px #888888;
 	text-align: center;
+    padding: 10px;
+}
+
+#happy-cat {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 20px;
+}
+
+#happy-cat img {
+    height: 100px;
+}
+
+#best-scores {
+    font-size: 18px;
+}
+
+.name {
+    width: 100px;
+    display: inline-block;
+}
+
+.score {
+    width: 100px;
+    display: inline-block;
+}
+
+#instructions {
+	position: relative;
+	color: grey;
+	background-color: pink;
+	width: 400px;
+	height: 300px;
+	margin-left: 250px;
+	margin-top: 50px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+    padding: 10px;
+}
+
+p.instructions-title, p.fame-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+div.key {
+    width: 70px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+div.home-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+}
+
+div.home-icon img {
+    height: 40px;
+    cursor: pointer;
 }
 
 #best-scores {
