@@ -11,6 +11,7 @@
     <script src='lib/ship.js'></script>
     <script src='lib/highscores.js'></script>
     <script src="parse.min.js"></script>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body>
@@ -47,10 +48,12 @@
 	    <div id="back-to-overview-from-instructions"><div class='home-icon'><img src="./images/home.png" /></div></div>
     </div>
 	<div id="game-over" class='hidden'>
-		<div id="final-score"> </div> Points! <br>
-		Please add your name to the wall of fame <br>
-		<input type="text" id="username">
-		<button type="submit" id="add-score">Submit</button>
+        <p class='game-over-title'>GAME OVER!</p>
+		You got <div id="final-score"> </div> points!<br><br>
+		Please add your name to the wall of fame!<br><br>
+		<input type="text" id="username"><br><br>
+		<button type="submit" id="add-score" class="pure-button">Give me eternal glory!</button>
+        <div id="back-to-overview-from-instructions"><div class='home-icon'><img src="./images/home.png" /></div></div>
 	</div>
 	<div id="background-music">
 		<audio loop="loop" autoplay="autoplay" controls="controls" id="music" hidden="true">  

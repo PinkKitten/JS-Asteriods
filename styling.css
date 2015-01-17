@@ -115,10 +115,6 @@
     height: 100px;
 }
 
-#best-scores {
-    font-size: 18px;
-}
-
 .name {
     width: 100px;
     display: inline-block;
@@ -171,7 +167,7 @@ div.home-icon img {
 
 #game-over {
 	position: relative;
-	color: white;
+	color: grey;
 	background-color: pink;
 	width: 400px;
 	height: 200px;
@@ -182,8 +178,37 @@ div.home-icon img {
 	text-align: center;
 }
 
+#best-scores {
+    font-size: 18px;
+}
+
+#username {
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+    transition: all 0.2s linear;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: grey; 
+    height: 24px;
+    width: 200px;
+}
+
+#add-score {
+    color: grey;
+}
+
 #final-score {
 	display: inline-block;
+}
+
+p.game-over-title {
+    padding: 15px;
+}
+
+#game-over > p {
+    margin: 0px;
+    font-weight: bold;
 }
 
 .visible {
