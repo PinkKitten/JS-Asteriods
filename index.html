@@ -86,10 +86,14 @@
   	    };
 		
 		pauseMusic.onclick = function () {
-			player.pause();
+            $('#play-music').show();
+            $('#pause-music').hide();
+            player.pause();
 		};
 		
 		playMusic.onclick = function () {
+            $('#play-music').hide();
+            $('#pause-music').show();
 			player.play();
 		};
 		
