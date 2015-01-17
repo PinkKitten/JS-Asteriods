@@ -42,7 +42,7 @@
         <div class="key">&#8594;</div>Turn right<br>
         <div class="key">&#8593;</div>Accelerate<br>
         <div class="key">&#8595;</div>Slow down<br>
-        <div class="key">spacebar</div>Shoot bullets<br>
+        <div class="key">spacebar</div>Shoot laser beams<br>
         <div class="key">P</div>Pause the game<br>
         <div class="key">U</div>Continue the game<br>
 	    <div id="back-to-overview-from-instructions"><div class='home-icon'><img src="./images/home.png" /></div></div>
@@ -113,6 +113,8 @@
 			$(gameOver).removeClass('visible');
 			$(gameOver).addClass('hidden');
             $('#username').val('');
+            $('#number-of-lives').html('3');
+            $('#number-of-points').html('0');
 		};
 		
 		visitLeaderBoard.onclick = function () {
@@ -134,6 +136,7 @@
 		submitScore.onclick = function () {
 			var points = $('#final-score').html();
 			var username = $('#username').val();
+            $('#username').val('');
 			var score = new Asteroids.HighScores();
 			score.addScore(username, points);
 			$('#username').html = "";
@@ -141,6 +144,8 @@
 			$(gameOver).addClass('hidden');
 			$(leaderBoard).removeClass('hidden');
 			$(leaderBoard).addClass('visible');
+            $('#number-of-lives').html('3');
+            $('#number-of-points').html('0');
 		};
     </script>
 </body>
