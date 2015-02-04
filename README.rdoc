@@ -1,3 +1,5 @@
+==README
+
 Welcome to CATeroids
 
 Based on the classic Asteroids game this is a 100% JavaScript based game played in the browser using HTML5 Canvas drawing. 
